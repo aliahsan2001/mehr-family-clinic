@@ -1,0 +1,115 @@
+/* =========================================================
+   Booking flow
+   ========================================================= */
+
+.book-hero { padding-bottom: 20px; }
+.booking { padding-bottom: clamp(70px, 9vw, 120px); }
+
+/* progress: a calm pulse line that becomes a checkmark */
+.progress { position: relative; margin-bottom: 34px; }
+.progress-line { width: 100%; height: 70px; display: block; transform-origin: 50% 50%; overflow: visible; }
+.pl-track { fill: none; stroke: var(--soft-2); stroke-width: 3; stroke-linejoin: round; }
+.pl-fill { fill: none; transition: stroke-dashoffset 1.4s var(--ease); stroke: var(--teal); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(15,139,141,.45)); }
+.progress-check { position: absolute; left: 50%; top: -6px; width: 80px; height: 80px; margin-left: -40px; overflow: visible; }
+.progress-check circle { fill: var(--surface); stroke: var(--teal); stroke-width: 3; }
+.progress-check path { fill: none; stroke: var(--teal); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.progress-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+.progress-steps li { display: flex; align-items: center; gap: 10px; color: var(--faint); font-weight: 700; font-size: .95rem; transition: color .6s; }
+.progress-steps span { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--line-2); font-size: .85rem; background: var(--surface); transition: background-color .6s, color .6s, border-color .6s; }
+.progress-steps .is-current { color: var(--ink); }
+.progress-steps .is-current span { border-color: var(--teal); color: var(--teal); box-shadow: 0 0 0 5px rgba(15,139,141,.12); }
+.progress-steps .is-done { color: var(--teal-deep); }
+.progress-steps .is-done span { background: var(--teal); border-color: var(--teal); color: #fff; }
+.progress-steps [data-clickable] { cursor: pointer; }
+.progress-steps [data-clickable]:hover { text-decoration: underline; text-underline-offset: 4px; }
+.progress.is-complete .progress-steps li { color: var(--teal-deep); }
+
+.book-layout { display: grid; grid-template-columns: 1fr 330px; gap: clamp(24px, 4vw, 48px); align-items: start; }
+.book-stage { min-height: 420px; min-width: 0; }
+.book-layout > * { min-width: 0; }
+.stage-title { font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 2.6rem); outline: none; }
+.stage-sub { color: var(--muted); margin: 10px 0 26px; max-width: 56ch; }
+.back-link { margin-top: 24px; display: inline-block; }
+
+/* summary */
+.book-summary { position: sticky; top: calc(var(--header-h) + 20px); padding: 26px; border-radius: var(--radius-lg); background: rgba(255,255,255,.78); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); box-shadow: var(--shadow); display: grid; gap: 14px; }
+.book-summary .mono { color: var(--teal-deep); }
+.sum-row { display: grid; grid-template-columns: 46px 1fr; gap: 14px; align-items: center; opacity: .55; transition: opacity .8s; }
+.sum-row.is-set { opacity: 1; }
+.sum-empty { width: 46px; height: 46px; border-radius: 50%; border: 1.5px dashed var(--line-2); }
+.sum-ico { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); color: var(--teal); }
+.sum-ico svg { width: 22px; height: 22px; }
+.sum-label { display: block; font-size: .8rem; color: var(--faint); }
+.sum-row b { font-size: 1.02rem; }
+.sum-fee { padding-top: 14px; border-top: 1px solid var(--line); display: grid; gap: 2px; color: var(--muted); }
+.sum-fee b { color: var(--ink); }
+.sum-fee span { font-size: .88rem; color: var(--faint); }
+
+/* step 1: doctors */
+.pick-doctors { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pick-doctor { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 18px; text-align: left; border-radius: var(--radius); background: var(--surface); border: 1.5px solid var(--line); transition: border-color .5s, box-shadow .6s; }
+.pick-doctor:hover { border-color: rgba(15,139,141,.4); box-shadow: 0 0 0 5px rgba(15,139,141,.06); }
+.pick-doctor.is-selected { border-color: var(--teal); box-shadow: var(--glow); }
+.pd-text { display: grid; gap: 2px; }
+.pd-text b { font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; }
+.pd-text > span { color: var(--muted); font-size: .9rem; }
+.pd-state { display: flex !important; align-items: center; gap: 8px; margin-top: 4px; }
+.pd-check { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--line-2); color: transparent; transition: background-color .5s, color .5s, border-color .5s; }
+.pd-check svg { width: 16px; height: 16px; }
+.is-selected .pd-check { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* step 2: the week as 3D day cards */
+.day-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; perspective: 1400px; }
+.day-card {
+  display: grid; justify-items: center; gap: 2px; padding: 18px 6px 16px; border-radius: 20px; background: var(--surface); border: 1.5px solid var(--line);
+  transform-style: preserve-3d; transition: border-color .5s, box-shadow .6s, background-color .5s;
+}
+.day-card:hover:not(:disabled) { border-color: rgba(15,139,141,.45); box-shadow: 0 18px 30px -18px rgba(15,139,141,.6); }
+.day-card.is-selected { border-color: var(--teal); background: var(--teal); color: #fff; box-shadow: var(--glow); }
+.day-card.is-selected .dc-hours, .day-card.is-selected .dc-free, .day-card.is-selected .dc-month { color: #d9f2ee; }
+.day-card:disabled { opacity: .45; cursor: not-allowed; background: transparent; border-style: dashed; }
+.day-card.is-full { opacity: .7; }
+.dc-day { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-deep); }
+.dc-date { font-family: var(--font-display); font-size: 2.4rem; line-height: 1.1; }
+.dc-month { font-size: .85rem; color: var(--muted); }
+.dc-hours { font-size: .74rem; color: var(--muted); text-align: center; line-height: 1.3; margin-top: 6px; min-height: 2.6em; }
+.dc-free { font-size: .76rem; font-weight: 700; color: #1d7a52; }
+.day-card.is-selected .dc-day { color: #fff; }
+
+/* step 3: slots */
+.slot-group { margin-bottom: 22px; }
+.slot-group .mono { color: var(--faint); margin-bottom: 10px; }
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 10px; }
+.slot { min-height: 52px; border-radius: 14px; background: var(--surface); border: 1.5px solid rgba(15,139,141,.3); font-weight: 700; color: var(--teal-deep); transition: background-color .5s, color .5s, box-shadow .6s, border-color .5s; }
+.slot:hover:not(:disabled) { border-color: var(--teal); box-shadow: 0 0 0 5px rgba(15,139,141,.1); }
+.slot.is-selected { background: var(--teal); color: #fff; border-color: var(--teal); }
+.slot.is-booked { background: transparent; border-color: var(--line); color: var(--faint); text-decoration: line-through; opacity: .55; cursor: not-allowed; }
+
+/* step 4: details */
+.details-form { display: grid; gap: 18px; max-width: 620px; }
+.field-row { display: flex; flex-wrap: wrap; gap: 18px; align-items: end; }
+.field-row .field { flex: 1 1 200px; }
+
+/* done */
+.done .mono { color: var(--teal-deep); margin-bottom: 10px; }
+.done-card { display: grid; gap: 0; margin: 0 0 24px; padding: 6px 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); max-width: 620px; }
+.done-card div { display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.done-card div:last-child { border-bottom: 0; }
+.done-card dt { color: var(--faint); font-size: .9rem; }
+.done-card dd { margin: 0; font-weight: 700; }
+.done-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+@media (max-width: 960px) {
+  .book-layout { grid-template-columns: 1fr; }
+  .book-summary { position: static; }
+  .pick-doctors { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  /* the week scrolls sideways with a swipe */
+  .day-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 2px 14px; margin: 0 calc(var(--gutter) * -1); padding-inline: var(--gutter); scrollbar-width: none; }
+  .day-row::-webkit-scrollbar { display: none; }
+  .day-card { flex: 0 0 104px; scroll-snap-align: start; }
+  .progress-steps { font-size: .8rem; }
+  .progress-steps li { flex-direction: column; text-align: center; gap: 4px; }
+  .done-card div { grid-template-columns: 1fr; gap: 2px; }
+}

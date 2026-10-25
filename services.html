@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- @include head -->
+<title>Services & Prices · Mehr Family Clinic</title>
+<meta name="description" content="Consultations, lab tests, vaccinations and check-up packages at Mehr Family Clinic, with every price listed.">
+<script type="module" src="/src/main.js"></script>
+</head>
+<body data-barba="wrapper">
+<!-- @include header -->
+<main id="main" data-barba="container" data-barba-namespace="services">
+
+  <section class="page-hero" aria-labelledby="services-title">
+    <div class="container">
+      <p class="eyebrow">Services &amp; prices</p>
+      <h1 id="services-title" class="display" data-split>Care, <em>clearly</em><br>priced.</h1>
+      <p class="lead" data-blur>Every service and every price, written down before you arrive. No surprises at the reception desk.</p>
+      <nav class="jump-links" aria-label="Jump to a service" data-jumps></nav>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-label="Services">
+    <div class="container service-grid" data-services></div>
+  </section>
+
+  <section class="section section-soft" id="packages-list" aria-labelledby="pk-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Check-up packages</p>
+          <h2 id="pk-title" class="display">A full picture,<br><em>in one visit</em></h2>
+        </div>
+        <p class="lead" data-blur>Come in for your tests in the morning, then go through every result with your doctor that evening.</p>
+      </div>
+      <div class="package-grid" data-packages></div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="lab-title">
+    <div class="container split">
+      <figure class="clinic-photo short" data-reveal>
+        <img src="/img/p/1614935151651-0bea6508db6b-1280.webp" alt="A lab technician preparing blood samples" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <p class="eyebrow">Our lab</p>
+        <h2 id="lab-title" class="display">Results the<br><em>same evening</em></h2>
+        <p class="lead" data-blur>Samples are collected 8 am – 1 pm, Monday to Saturday. No appointment is needed for lab tests. For fasting tests, have nothing but water for 10–12 hours beforehand.</p>
+        <p class="body-text" data-blur>Reports arrive on WhatsApp as a PDF, and your doctor sees them at the same time.</p>
+        <div class="hero-ctas lab-ctas">
+          <a class="btn btn-primary" href="/book">Book a consultation <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="https://wa.me/" data-wa-chat target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Ask about a test</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- @include footer -->
+</body>
+</html>

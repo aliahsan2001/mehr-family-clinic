@@ -1,0 +1,30 @@
+/* =========================================================
+   Page styles
+   ========================================================= */
+
+/* ================= HOME ================= */
+.hero { position: relative; min-height: calc(100svh - 36px); margin-top: calc(var(--header-h) * -1); padding-top: var(--header-h); display: flex; align-items: center; overflow: hidden; isolation: isolate; }
+.heart-wrap { position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 70% 52%, #cdeee9, var(--bg) 60%); }
+.heart-wrap canvas { width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 2s var(--ease); }
+.heart-wrap canvas.is-ready { opacity: 1; }
+.hero::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, rgba(244,250,249,.92) 0%, rgba(244,250,249,.6) 36%, rgba(244,250,249,0) 58%), linear-gradient(0deg, var(--bg), rgba(244,250,249,0) 18%); }
+.hero-inner { padding-block: clamp(60px, 10vh, 120px); }
+.hero-copy { max-width: 620px; position: relative; z-index: 2; }
+.hero h1 { margin-bottom: 26px; }
+.hero .lead { margin-bottom: 34px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+
+/* lighter devices: a drawn heart that breathes with CSS */
+.heart-lite { display: none; position: absolute; inset: 0; place-items: center; }
+.lite .heart-lite, .no-webgl .heart-lite { display: grid; }
+.lite .heart-wrap canvas, .no-webgl canvas { display: none; }
+.heart-lite svg { width: min(36vw, 340px); height: auto; aspect-ratio: 1; margin-left: 38%; color: var(--teal); stroke-width: .8; filter: drop-shadow(0 30px 40px rgba(15,139,141,.35)); animation: liteBreath 10s ease-in-out infinite; }
+@keyframes liteBreath { 0%, 100% { transform: scale(.94); opacity: .75; } 40% { transform: scale(1.04); opacity: 1; } }
+
+@media (max-width: 760px) {
+  .hero { align-items: flex-end; min-height: 0; }
+  .heart-wrap { bottom: auto; height: 52svh; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent); mask-image: linear-gradient(180deg, #000 60%, transparent); }
+  .hero::after { display: none; }
+  .hero-inner { padding-top: 40svh; padding-bottom: 60px; }
+  .heart-lite svg { margin-left: 0; width: 46vw; }
+}

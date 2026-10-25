@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- @include head -->
+<title>Mehr Family Clinic · Family Doctors in Gulshan-e-Iqbal, Karachi</title>
+<meta name="description" content="A calm neighbourhood clinic in Gulshan-e-Iqbal. See which doctor is in today, check prices and book an appointment online.">
+<script type="module" src="/src/main.js"></script>
+</head>
+<body data-barba="wrapper">
+<!-- @include header -->
+<main id="main" data-barba="container" data-barba-namespace="home">
+
+  <svg class="pulse-line" data-pulse aria-hidden="true"><path class="pulse-track"/><path class="pulse-draw"/><circle class="pulse-tip" r="5"/></svg>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="heart-wrap" data-heart-wrap aria-hidden="true">
+      <canvas data-heart></canvas>
+      <div class="heart-lite">
+        <svg viewBox="0 0 24 24"><use href="#i-heart"/></svg>
+      </div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow" data-hero-fade>Family clinic · Gulshan-e-Iqbal, Karachi</p>
+        <h1 id="hero-title" class="display" data-split>Calm in,<br><em>care out.</em></h1>
+        <p class="lead" data-hero-fade>Family doctors six days a week and two visiting specialists. See who's in, choose a time that suits you, and skip the crowded waiting room.</p>
+        <div class="hero-ctas" data-hero-fade>
+          <a class="btn btn-primary" href="/book">Book an appointment <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#today">Who's in today</a>
+        </div>
+        <div class="hero-meta" data-hero-fade>
+          <span class="chip" data-open-wrap><span class="status-dot"></span><span data-open-status>Open Mon–Sat 9 am – 10 pm</span></span>
+          <a class="chip chip-urgent" href="tel:+922134000911"><svg aria-hidden="true"><use href="#i-phone"/></svg>Urgent line · 3400 0911</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="today" aria-labelledby="today-title">
+    <div class="container">
+      <div class="section-head">
+        <div data-pulse-stop>
+          <p class="eyebrow">Who's in today</p>
+          <h2 id="today-title" class="display">Your doctor,<br>at a glance</h2>
+        </div>
+        <p class="lead" data-blur>No more calling to ask. A green pulse means the doctor is seeing patients right now.</p>
+      </div>
+      <div class="today-grid" data-today></div>
+    </div>
+  </section>
+
+  <section class="section section-soft" aria-labelledby="care-title">
+    <div class="container">
+      <div class="section-head">
+        <div data-pulse-stop>
+          <p class="eyebrow">What we do</p>
+          <h2 id="care-title" class="display">Care for the<br>whole family</h2>
+        </div>
+        <a class="btn btn-ghost" href="/services">All services &amp; prices <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="care-grid" data-care></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="clinic-title">
+    <div class="container split">
+      <figure class="clinic-photo" data-reveal>
+        <img src="/img/p/1629909614456-6b1c5c94cecc-1280.webp" alt="A bright waiting area with teal sofas" loading="lazy" decoding="async">
+        <figcaption class="glass-card">
+          <span class="mono">Average wait</span>
+          <b><span data-count="12">12</span> min</b>
+          <span>for booked patients</span>
+        </figcaption>
+      </figure>
+      <div data-pulse-stop>
+        <p class="eyebrow">The clinic</p>
+        <h2 id="clinic-title" class="display">A clinic that<br>runs on time</h2>
+        <p class="lead" data-blur>When everyone books a time, nobody has to wait two hours on a plastic chair. Our reception spreads visits across the day, so you're seen when we say you will be.</p>
+        <p class="body-text" data-blur>Reports reach you on WhatsApp the same evening, and your doctor keeps your history on file, so you never have to repeat yourself.</p>
+        <ul class="facts">
+          <li><b><span data-count="6">6</span></b><span>doctors, two of them visiting specialists</span></li>
+          <li><b>13</b><span>hours a day, Monday to Saturday</span></li>
+          <li><b>Same day</b><span>lab reports on WhatsApp</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" aria-labelledby="hours-title">
+    <div class="container hours-grid">
+      <div data-pulse-stop>
+        <p class="eyebrow">Timings</p>
+        <h2 id="hours-title" class="display">When we're<br>here for you</h2>
+        <table class="hours-table" data-reveal>
+          <caption class="sr-only">Clinic opening hours</caption>
+          <tbody data-hours></tbody>
+        </table>
+        <p class="body-text muted" data-blur>Lab samples are collected 8 am – 1 pm, Monday to Saturday.</p>
+      </div>
+      <aside class="urgent-card" data-reveal aria-labelledby="urgent-title">
+        <span class="urgent-icon" data-draw><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 3l10 18H2z"/><path pathLength="1" d="M12 10v5M12 18v.01"/></svg></span>
+        <h3 id="urgent-title">Need help urgently?</h3>
+        <p>Call our urgent line during opening hours and a doctor will call you back within 15 minutes.</p>
+        <a class="btn btn-urgent btn-block" href="tel:+922134000911"><svg aria-hidden="true"><use href="#i-phone"/></svg>+92 21 3400 0911</a>
+        <p class="urgent-note">For chest pain, difficulty breathing or serious injury, call <a href="tel:1122">Rescue 1122</a> straight away.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="section-head">
+        <div data-pulse-stop>
+          <p class="eyebrow">Booking, simply</p>
+          <h2 id="steps-title" class="display">Three calm steps</h2>
+        </div>
+      </div>
+      <ol class="steps-row">
+        <li data-reveal><span class="step-ico" data-draw><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path pathLength="1" d="M4 21a8 8 0 0 1 16 0"/></svg></span><h3>Choose a doctor</h3><p>See their qualifications and the days they're in.</p></li>
+        <li data-reveal><span class="step-ico" data-draw><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M4 6h16v14H4z"/><path pathLength="1" d="M4 10h16M8 3v4M16 3v4"/></svg></span><h3>Pick a day and time</h3><p>Open slots rise to meet you. Booked ones stay faded.</p></li>
+        <li data-reveal><span class="step-ico" data-draw><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><h3>Get your confirmation</h3><p>Save it to your calendar, or send it to reception on WhatsApp.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-soft" aria-labelledby="voices-title">
+    <div class="container">
+      <div class="section-head">
+        <div data-pulse-stop>
+          <p class="eyebrow">Patients say</p>
+          <h2 id="voices-title" class="display">Kind words</h2>
+        </div>
+        <p class="lead muted" data-blur>Placeholder reviews for this concept. A live site would show verified Google reviews.</p>
+      </div>
+      <div class="quotes">
+        <figure class="quote" data-reveal><blockquote>“Dr. Ayesha actually listens. I booked the night before and walked straight in at 10.”</blockquote><figcaption><span class="avatar" style="--tone:#0f8b8d">RN</span><span><b>Rubina N.</b>Patient for 4 years</span></figcaption></figure>
+        <figure class="quote" data-reveal><blockquote>“The evening clinic is a lifesaver. I can see a doctor after work without losing half a day.”</blockquote><figcaption><span class="avatar" style="--tone:#2f6f8f">AH</span><span><b>Asad H.</b>Gulshan Block 6</span></figcaption></figure>
+        <figure class="quote" data-reveal><blockquote>“My father's check-up results came on WhatsApp the same evening. Simple and kind.”</blockquote><figcaption><span class="avatar" style="--tone:#8a5a9e">SM</span><span><b>Sadia M.</b>Daughter of a patient</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-card" data-reveal data-pulse-stop>
+        <h2 id="cta-title" class="display">Take a breath.<br><em>We'll take it from here.</em></h2>
+        <p>Book in under a minute. We'll confirm on screen and keep your slot.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="/book">Book an appointment <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="/doctors">Meet the doctors</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- @include footer -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- @include head -->
+<title>Book an Appointment · Mehr Family Clinic</title>
+<meta name="description" content="Choose a doctor, a day and an open time slot at Mehr Family Clinic. Your request is confirmed on screen.">
+<script type="module" src="/src/main.js"></script>
+</head>
+<body data-barba="wrapper">
+<!-- @include header -->
+<main id="main" data-barba="container" data-barba-namespace="book">
+
+  <section class="page-hero book-hero" aria-labelledby="book-title">
+    <div class="container">
+      <p class="eyebrow">Book an appointment</p>
+      <h1 id="book-title" class="display">Take your time.<br><em>We'll keep your place.</em></h1>
+    </div>
+  </section>
+
+  <section class="booking" aria-label="Booking">
+    <div class="container">
+      <div class="progress" data-progress>
+        <svg class="progress-line" viewBox="0 0 1000 70" preserveAspectRatio="none" aria-hidden="true">
+          <path class="pl-track" d="M0 35 H420 l12 -4 l10 8 l8 -26 l10 44 l8 -30 l10 12 l12 -4 H1000"/>
+          <path class="pl-fill" data-pl-fill d="M0 35 H420 l12 -4 l10 8 l8 -26 l10 44 l8 -30 l10 12 l12 -4 H1000" pathLength="1"/>
+        </svg>
+        <svg class="progress-check" viewBox="0 0 80 80" aria-hidden="true" data-pl-check><circle cx="40" cy="40" r="34" pathLength="1"/><path d="M24 41l11 11 21-24" pathLength="1"/></svg>
+        <ol class="progress-steps" data-steps>
+          <li data-step-pill="doctor"><span>1</span>Doctor</li>
+          <li data-step-pill="day"><span>2</span>Day</li>
+          <li data-step-pill="time"><span>3</span>Time</li>
+          <li data-step-pill="details"><span>4</span>Your details</li>
+        </ol>
+      </div>
+
+      <div class="book-layout">
+        <div class="book-stage" data-stage aria-live="polite"></div>
+        <aside class="book-summary" data-summary aria-label="Your appointment so far"></aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- @include footer -->
+</body>
+</html>

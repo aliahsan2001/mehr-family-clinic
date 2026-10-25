@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- @include head -->
+<title>Our Doctors · Mehr Family Clinic</title>
+<meta name="description" content="Meet the family doctors and visiting specialists at Mehr Family Clinic. See who is in today and each doctor's weekly timetable.">
+<script type="module" src="/src/main.js"></script>
+</head>
+<body data-barba="wrapper">
+<!-- @include header -->
+<main id="main" data-barba="container" data-barba-namespace="doctors">
+
+  <section class="page-hero" aria-labelledby="doctors-title">
+    <div class="container">
+      <p class="eyebrow">Our doctors</p>
+      <h1 id="doctors-title" class="display" data-split>Familiar faces,<br><em>fixed timings.</em></h1>
+      <p class="lead" data-blur>Four family doctors and two visiting specialists. Turn a card over to see when each doctor is in.</p>
+      <div class="filter-row" role="group" aria-label="Filter doctors" data-filters>
+        <button type="button" aria-pressed="true" data-filter="all">Everyone</button>
+        <button type="button" aria-pressed="false" data-filter="gp">Family doctors</button>
+        <button type="button" aria-pressed="false" data-filter="visiting">Visiting specialists</button>
+        <button type="button" aria-pressed="false" data-filter="today">In today</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" aria-label="Doctors">
+    <div class="container doctor-grid" data-doctors></div>
+  </section>
+
+  <section class="section-tight" aria-labelledby="dr-cta">
+    <div class="container">
+      <div class="cta-card" data-reveal>
+        <h2 id="dr-cta" class="display">Not sure who<br><em>to see?</em></h2>
+        <p>Book with whichever family doctor is free first. They'll refer you to a specialist if you need one.</p>
+        <div class="hero-ctas"><a class="btn btn-primary" href="/book">Book the first free slot <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<!-- @include footer -->
+</body>
+</html>
