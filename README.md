@@ -1,5 +1,13 @@
 # Mehr Family Clinic: "Calm in, care out"
 
+[**Live demo**](https://mehr-family-clinic.vercel.app) · [Source files](./src/) · [Local setup](#run-it)
+
+## Project at a glance
+
+Doctor and date selection, booking confirmation, downloadable calendar events, and lighter-device fallbacks.
+
+**Scope:** Frontend concept for a fictional clinic. Availability is simulated; appointments are not stored or confirmed by a backend.
+
 Concept project 2 of 8 for the Aqoa Systems portfolio. A fictional neighbourhood clinic in Gulshan-e-Iqbal, Karachi.
 
 ## What's in it
@@ -21,7 +29,7 @@ Vite · Three.js · GSAP + ScrollTrigger · Lenis · Barba.js · SplitType
 ## Run it
 From a terminal:
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 The site uses ES modules, so it needs a server: opening `index.html` by double-clicking won't work. Testing flags: `?lite` forces the lighter version, `?full` forces 3D.
